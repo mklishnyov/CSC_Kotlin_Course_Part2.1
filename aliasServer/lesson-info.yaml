@@ -18,4 +18,4 @@ content:
   - aliasServerMutableList
   - aliasServerFinishGame
 is_template_based: false
-current_task: 10
+current_task: 13

@@ -19,4 +19,3 @@ class GameResultsResource(val service: GameResultsService) {
     @GetMapping("/all")
     fun getAllGameResults() = service.getAllGameResults()
 }
-
