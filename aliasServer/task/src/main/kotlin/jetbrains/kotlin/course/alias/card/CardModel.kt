@@ -12,5 +12,6 @@ data class Card(val id: Identifier, val words: List<Word>, val identifierFactory
     companion object {
         private const val WORDS_IN_CARD = 4
         private val cardsAmount = words.size / WORDS_IN_CARD
+        fun getWords(): Int = WORDS_IN_CARD
     }
 }
