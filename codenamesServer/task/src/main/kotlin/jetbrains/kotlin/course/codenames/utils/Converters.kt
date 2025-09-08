@@ -1,5 +1,7 @@
 package jetbrains.kotlin.course.codenames.utils
 
+import jetbrains.kotlin.course.codenames.card.Card
+import jetbrains.kotlin.course.codenames.card.WordCardData
 import jetbrains.kotlin.course.codenames.keyCard.KeyCard
 import jetbrains.kotlin.course.codenames.keyCard.KeyCardCell
 import jetbrains.kotlin.course.codenames.keyCard.KeyCardType
@@ -16,3 +18,6 @@ private fun KeyCardCell.toJsKeyCardType() = when (this.type) {
 object ConvertersUtils {
     val cardsFactory = IdentifierFactory()
 }
+
+fun List<Card>.toJsCards() =
+    this.map { JsCodeNamesCard(ConvertersUtils.cardsFactory.uniqueIdentifier(), (it.data as WordCardData).word) }
