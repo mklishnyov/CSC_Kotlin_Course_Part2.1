@@ -12,12 +12,18 @@ class CardService {
             generated.shuffled()
         }
 
-        fun generateNewCardsSequence()
+        private fun generateNewCardsSequence() = randomCardGenerator.generateCards().toMutableList()
+
+        var cards = generateNewCardsSequence()
     }
 
+    fun getNextCard(): Card {
+        require(cards.isNotEmpty()) {error("")}
+        return cards.removeFirst()
+    }
 
-
-    fun getNextCard(): Card = TODO("Not implemented yet")
-
-    fun startNewGame(): Card = TODO("Not implemented yet")
+    fun startNewGame(): Card {
+        cards = generateNewCardsSequence()
+        return getNextCard()
+    }
 }
